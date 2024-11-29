@@ -10,7 +10,7 @@ public class Main {
         System.out.println("Welcome to address Book ");
         do {
            System.out.println("Enter to 1 to create Contact \nEnter 2 to display A1 contacts" +
-                   "\nEnter 4 to Delete the Contact  ");
+                   "\nEnter 3 to edit the contact \nEnter 4 to Delete the Contact  ");
            int input = sc.nextInt();
             switch (input) {
                 case 1:
@@ -18,6 +18,9 @@ public class Main {
                     break;
                 case 2:
                     A1.display();
+                    break;
+                case 3:
+                    editContact(A1);
                     break;
                 case 4:
                     deleteContact(A1);
@@ -51,6 +54,13 @@ public class Main {
         int zip = sc.nextInt();
         Contact c1 = new Contact(fname,lname, city,state,email,phone,zip);
         A1.addContact(c1);
+    }
+    static  void editContact(AddressBook A1){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first name to edit the contact details ");
+        String name = sc.next();
+        A1.editContact(name);
+
     }
     static void deleteContact(AddressBook A1){
         Scanner sc = new Scanner(System.in);
