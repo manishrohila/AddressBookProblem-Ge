@@ -9,15 +9,21 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to address Book ");
         do {
-           System.out.println("Enter to 1 to create Contact ");
+           System.out.println("Enter to 1 to create Contact \nEnter 2 to display A1 contacts  ");
            int input = sc.nextInt();
-           switch (input){
-               case 1 : createcontact(A1);
-//               case 2 : A1.display();
-               default:
-                   System.out.println("wrong input");
-           }
-            System.out.println("Enter 0 to exit ");
+            switch (input) {
+                case 1:
+                    createcontact(A1);
+                    break;
+                case 2:
+                    A1.display();
+                    break;
+                default:
+                    System.out.println("wrong input");
+                    break;
+            }
+
+            System.out.println("Enter 0 to exit\nTo continue press 1 ");
            i = sc.nextInt();
          }while (i!=0);
         System.out.println("Thank you for using the address book");
