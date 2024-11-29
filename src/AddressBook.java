@@ -11,4 +11,16 @@ public class AddressBook {
     public void display(){
         System.out.println(adBook);
     }
+    public void editContact(){
+
+    }
+    public  void deleteContact (String name){
+        boolean removed = adBook.removeIf(contact -> contact.firstName.equalsIgnoreCase(name));
+        if(removed){
+            System.out.println("Contact is Deleted ");
+        }
+        else {
+            System.out.println("contact not found");
+        }
+    }
 }

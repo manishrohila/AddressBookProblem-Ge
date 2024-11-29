@@ -9,7 +9,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to address Book ");
         do {
-           System.out.println("Enter to 1 to create Contact \nEnter 2 to display A1 contacts  ");
+           System.out.println("Enter to 1 to create Contact \nEnter 2 to display A1 contacts" +
+                   "\nEnter 4 to Delete the Contact  ");
            int input = sc.nextInt();
             switch (input) {
                 case 1:
@@ -17,6 +18,9 @@ public class Main {
                     break;
                 case 2:
                     A1.display();
+                    break;
+                case 4:
+                    deleteContact(A1);
                     break;
                 default:
                     System.out.println("wrong input");
@@ -29,7 +33,7 @@ public class Main {
         System.out.println("Thank you for using the address book");
         sc.close();
     }
-    static void createcontact(AddressBook a1){
+    static void createcontact(AddressBook A1){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter First Name ");
         String fname = sc.next();
@@ -46,6 +50,13 @@ public class Main {
         System.out.println("Enter zip ");
         int zip = sc.nextInt();
         Contact c1 = new Contact(fname,lname, city,state,email,phone,zip);
-        a1.addContact(c1);
+        A1.addContact(c1);
+    }
+    static void deleteContact(AddressBook A1){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name to delete");
+        String name= sc.next();
+        A1.deleteContact(name);
+
     }
 }
